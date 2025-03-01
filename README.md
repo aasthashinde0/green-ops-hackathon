@@ -71,9 +71,5 @@ unzip wind-turbine-scada-data-for-early-fault-detection.zip
 📌 *Aastha Shinde*  
 📌 *Varad Dongarkar*  
 
----
-### 🔗 Connect
-For any queries or collaboration, feel free to reach out!
 
-📧 Email: [your-email@example.com](mailto:your-email@example.com) *(Replace with actual email if needed)*
 
