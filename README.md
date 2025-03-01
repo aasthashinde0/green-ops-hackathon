@@ -1,43 +1,46 @@
-# Green-Ops Hackathon: Wind Turbine SCADA Data for Early Fault Detection
+# Predictive Maintenance for Renewable Energy Assets
 
 ## 📌 Overview
-This project focuses on developing an **AI-powered predictive maintenance system** for renewable energy assets like **wind turbines and solar panels**. Using **SCADA data** and **deep learning techniques**, the system detects early signs of equipment degradation, enabling **proactive maintenance** to reduce downtime and enhance energy efficiency.
+This project aims to implement a **Predictive Maintenance system for Renewable Energy Assets using Autoencoders**  for anomaly detection and Recurrent Neural Networks (RNNs) for time-series forecasting. The goal is to predict equipment failures and maintenance needs before they occur, improving efficiency and reducing downtime.
 
 ### 📂 Dataset
 - **Source**: [Kaggle - Wind Turbine SCADA Data for Early Fault Detection](https://www.kaggle.com/datasets/azizkasimov/wind-turbine-scada-data-for-early-fault-detection)
 
 ---
-## 🚀 Features
-✅ **SCADA-Based Anomaly Detection**: Extracts key metrics such as **power output, rotor speed, and environmental conditions**.
+Methodology
 
-✅ **Deep Learning for Anomaly Detection**: Utilizes **autoencoders** and **time-series models (RNNs/Transformers)** to predict failures.
+1. Anomaly Detection using Autoencoders
+- Trained an Autoencoder on normal operational data.
+- Used Reconstruction Loss to detect anomalies.
+- Set a threshold to classify faulty conditions.
 
-✅ **Multi-Sensor Data Fusion**: Combines sensor readings to **enhance failure detection accuracy**.
-
-✅ **Failure Prediction Modeling**: Estimates the **Remaining Useful Life (RUL)** of components for **proactive scheduling**.
+2. Time-Series Forecasting using RNN
+- Implemented a Recurrent Neural Network (RNN) to forecast future values.
+- Used historical data to train the model.
+- Compared predicted values with actual values to assess model performance.
 
 ---
 ## 🛠 Setup Instructions
-### 1️⃣ Install Required Libraries:
+### 1️. Install Required Libraries:
 ```bash
 pip install kaggle numpy pandas tensorflow scikit-learn matplotlib seaborn
 ```
 
-### 2️⃣ Upload Kaggle API Key:
+### 2️. Upload Kaggle API Key:
 Upload your `kaggle.json` file.
 ```python
 from google.colab import files
 files.upload()  # Upload the kaggle.json file
 ```
 
-### 3️⃣ Configure Kaggle Credentials:
+### 3️. Configure Kaggle Credentials:
 ```bash
 mkdir -p ~/.kaggle
 mv kaggle.json ~/.kaggle/
 chmod 600 ~/.kaggle/kaggle.json
 ```
 
-### 4️⃣ Download and Extract Dataset:
+### 4️. Download and Extract Dataset:
 ```bash
 kaggle datasets download -d azizkasimov/wind-turbine-scada-data-for-early-fault-detection
 unzip wind-turbine-scada-data-for-early-fault-detection.zip
@@ -61,9 +64,9 @@ unzip wind-turbine-scada-data-for-early-fault-detection.zip
 
 ---
 ## 🔮 Future Improvements
-- Enhance **model generalization** for different asset types.
-- Deploy in a **real-time monitoring system** for live anomaly detection.
-- Optimize model efficiency for **lower latency predictions**.
+- Fine-tune RNN model with **more training data**.
+- Experiment with LSTMs/GRUs for improved forecasting
+- Deploy the model as a real-time predictive maintenance tool.
 
 ---
 ## 👥 Authors
