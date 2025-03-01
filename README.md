@@ -1,70 +1,79 @@
-# green-ops-hackathon
-Wind turbine scada data for early fault detection
+# Green-Ops Hackathon: Wind Turbine SCADA Data for Early Fault Detection
 
-Dataset used - https://www.kaggle.com/datasets/azizkasimov/wind-turbine-scada-data-for-early-fault-detection
+## 📌 Overview
+This project focuses on developing an **AI-powered predictive maintenance system** for renewable energy assets like **wind turbines and solar panels**. Using **SCADA data** and **deep learning techniques**, the system detects early signs of equipment degradation, enabling **proactive maintenance** to reduce downtime and enhance energy efficiency.
 
-Predictive Maintenance for Renewable Energy Assets
+### 📂 Dataset
+- **Source**: [Kaggle - Wind Turbine SCADA Data for Early Fault Detection](https://www.kaggle.com/datasets/azizkasimov/wind-turbine-scada-data-for-early-fault-detection)
 
-Overview
+---
+## 🚀 Features
+✅ **SCADA-Based Anomaly Detection**: Extracts key metrics such as **power output, rotor speed, and environmental conditions**.
 
-This project focuses on developing an AI-powered predictive maintenance system for renewable energy assets like wind turbines and solar panels. Using SCADA data and deep learning techniques, the system detects early signs of equipment degradation, allowing proactive maintenance to reduce downtime and improve energy efficiency.
+✅ **Deep Learning for Anomaly Detection**: Utilizes **autoencoders** and **time-series models (RNNs/Transformers)** to predict failures.
 
-Features
+✅ **Multi-Sensor Data Fusion**: Combines sensor readings to **enhance failure detection accuracy**.
 
-SCADA-Based Anomaly Detection: Extracts key metrics such as power output, rotor speed, and environmental conditions.
+✅ **Failure Prediction Modeling**: Estimates the **Remaining Useful Life (RUL)** of components for **proactive scheduling**.
 
-Deep Learning for Anomaly Detection: Uses autoencoders and time-series models (RNNs/Transformers) to predict failures.
-
-Multi-Sensor Data Fusion: Combines sensor readings to improve failure detection accuracy.
-
-Failure Prediction Modeling: Estimates the Remaining Useful Life (RUL) of components for proactive scheduling.
-
-Setup Instructions
-
-Install Required Libraries:
-
+---
+## 🛠 Setup Instructions
+### 1️⃣ Install Required Libraries:
+```bash
 pip install kaggle numpy pandas tensorflow scikit-learn matplotlib seaborn
+```
 
-Upload Kaggle API Key:
-
-Upload the kaggle.json file.
-
-Move it to the appropriate directory:
-
+### 2️⃣ Upload Kaggle API Key:
+Upload your `kaggle.json` file.
+```python
 from google.colab import files
 files.upload()  # Upload the kaggle.json file
+```
 
-Set permissions and configure the environment:
-
+### 3️⃣ Configure Kaggle Credentials:
+```bash
 mkdir -p ~/.kaggle
 mv kaggle.json ~/.kaggle/
 chmod 600 ~/.kaggle/kaggle.json
+```
 
-Download Dataset:
+### 4️⃣ Download and Extract Dataset:
+```bash
+kaggle datasets download -d azizkasimov/wind-turbine-scada-data-for-early-fault-detection
+unzip wind-turbine-scada-data-for-early-fault-detection.zip
+```
 
-kaggle datasets download -d <dataset-name>
-unzip <dataset-name>.zip
+### 5️⃣ Run the Jupyter Notebook:
+- Open `wind_turbine.ipynb`
+- Execute the cells to **preprocess data, train models, and visualize results**.
 
-Run the Jupyter Notebook:
+---
+## 📝 Usage Instructions
+### 🔹 **Preprocessing**
+- Cleans and processes **SCADA logs**
+- Handles **missing values and outliers**
 
-Open the notebook (wind_turbin.ipynb) and execute the cells to preprocess data, train models, and visualize results.
+### 🔹 **Model Training**
+- Trains a **deep learning model** for anomaly detection and failure prediction
 
-Usage Instructions
+### 🔹 **Visualization**
+- **Graphs and charts** illustrate performance trends and failure predictions
 
-Preprocessing: The notebook cleans and processes SCADA logs, handling missing values and outliers.
+---
+## 🔮 Future Improvements
+- Enhance **model generalization** for different asset types.
+- Deploy in a **real-time monitoring system** for live anomaly detection.
+- Optimize model efficiency for **lower latency predictions**.
 
-Model Training: The deep learning model is trained to detect anomalies and predict failures.
+---
+## 👥 Authors
+**Team Byte**  
+📌 *Aastha Shinde*  
+📌 *Varad Dongarkar*  
 
-Visualization: Graphs and charts illustrate performance trends and failure predictions.
+---
+### 🔗 Connect
+For any queries or collaboration, feel free to reach out!
 
-Authors
-Team Byte 
-( Aastha Shinde , Varad Dongarkar ) 
+📧 Email: [your-email@example.com](mailto:your-email@example.com) *(Replace with actual email if needed)*
 
-Future Improvements
-
-Improve model generalization for different asset types.
-
-Deploy in a real-time monitoring system for live anomaly detection.
-
-Optimize model efficiency for lower latency predictions.
